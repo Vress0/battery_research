@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/pinyuan/CHGNET/400K/md.py", line 12, in <module>
+    job_id = os.environ.get('SLURM_JOB_ID', datetime.now().strftime('%Y%m%d_%H%M%S'))
+                                            ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?
+srun: error: cguhpc2: task 0: Exited with exit code 1

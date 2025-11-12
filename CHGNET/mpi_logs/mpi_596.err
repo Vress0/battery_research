@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/pinyuan/CHGNET/md.py", line 36, in <module>
+    structure = smart_load_poscar(path)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pinyuan/CHGNET/poscar_utils.py", line 24, in smart_load_poscar
+    return Structure.from_file(files[0])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pinyuan/.local/lib/python3.12/site-packages/pymatgen/core/structure.py", line 3300, in from_file
+    raise ValueError(f"Unrecognized extension in {filename=}")
+ValueError: Unrecognized extension in filename='/home/pinyuan/CHGNET/POSCAR/Na3PS4.poscar'

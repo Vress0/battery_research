@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH -p gpu
+#SBATCH -J CHGNET_gpu
+#SBATCH -o mpi_logs/%j.out
+#SBATCH -e mpi_logs/%j.err
+
+echo "Running on $(hostname)"
+echo "SLURM job ID: $SLURM_JOB_ID"
+echo "Allocated CPUs: $SLURM_CPUS_ON_NODE"
+
+module purge
+module load aocc-compiler-5.0.0_module aocl-linux-aocc-5.0.0_module ompi4.1.8_aocc_5.0.0
+
+export CUDA_VISIBLE_DEVICES=0
+
+# >>> conda initialize >>>
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# 確保 mpi_logs 資料夾存在
+mkdir -p mpi_logs
+
+# 用 srun 統一輸出
+srun ~/.conda/envs/chgnet-env/bin/python md.py
+

@@ -1,0 +1,34 @@
+# 大型軌跡檔案 (超過 GitHub 限制)
+*.traj
+*.xyz
+
+# Python 快取檔案
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 日誌檔案
+*.log
+*.out
+*.err
+
+# 結果資料夾
+results_*/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# 編譯器輸出
+*.o
+*.a
+
+# 備份檔案
+*~
+*.bak
+*.swp
+
+# 作業系統檔案
+.DS_Store
+Thumbs.db

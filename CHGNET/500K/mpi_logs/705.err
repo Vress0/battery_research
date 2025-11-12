@@ -1,0 +1,2 @@
+/home/pinyuan/.conda/envs/chgnet-env/bin/python: can't open file '/home/pinyuan/CHGNET/500K/md.py': [Errno 2] No such file or directory
+srun: error: cguhpc2: task 0: Exited with exit code 2

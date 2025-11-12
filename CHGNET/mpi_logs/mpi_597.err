@@ -1,0 +1,3 @@
+/home/pinyuan/.local/lib/python3.12/site-packages/ase/md/nvtberendsen.py:98: RuntimeWarning: divide by zero encountered in scalar divide
+  1.0 + (self.temperature / old_temperature - 1.0) * tautscl
+slurmstepd: error: *** JOB 597 ON cguhpc2 CANCELLED AT 2025-09-25T15:25:13 ***
